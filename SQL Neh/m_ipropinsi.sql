@@ -1,9 +1,11 @@
 
 
 CREATE TABLE TB_PROVINSI (
-  PROVINSI_ID int identity (20,1) primary key,
+  PROVINSI_ID int  primary key,
   PROVINSI_NAME varchar(50) NOT NULL
 ) 
+
+drop table TB_PROVINSI
 
 INSERT INTO TB_PROVINSI (PROVINSI_ID, PROVINSI_NAME) VALUES
 (1, 'BANTEN'),
