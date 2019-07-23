@@ -14,6 +14,12 @@ namespace FinalProject.Models
     
     public partial class TB_USER
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TB_USER()
+        {
+            this.TB_CANDIDATE_SELECTION_HISTORY = new HashSet<TB_CANDIDATE_SELECTION_HISTORY>();
+        }
+    
         public int USER_ID { get; set; }
         public int ROLE_ID { get; set; }
         public string USERNAME { get; set; }
@@ -22,5 +28,7 @@ namespace FinalProject.Models
         public string FULL_NAME { get; set; }
     
         public virtual TB_ROLE TB_ROLE { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TB_CANDIDATE_SELECTION_HISTORY> TB_CANDIDATE_SELECTION_HISTORY { get; set; }
     }
 }
