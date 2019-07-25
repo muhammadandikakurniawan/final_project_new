@@ -1,0 +1,68 @@
+﻿@model FinalProject.DTO.CandidateJobExperienceDTO
+
+@section title{
+    @ViewBag.DataView["title"]
+}
+
+@section content{
+
+    <h2><center> Add Experience </center></h2>
+    <hr class="bg-dark" />
+
+    <form method="post" action="~/updateexperience">
+        <div class="form-row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col">
+                <div class="form-group ml-3">
+                    <label class="title control-label">Company Name</label>
+                    <input type="text" value="@Model.COMPANY_NAME" class="form-control" />
+                </div>
+                <div class="form-group ml-3">
+                    <label class="title control-label">Industry</label>
+                    <input type="text" value="@Model.INDUSTRIES" class="form-control" />
+                </div>
+                <div class="form-group ml-3">
+                    <label class="title control-label">Potition</label>
+                    <input type="date" value="@Model.CANDIDATE_POSITION" class="form-control" />
+                </div>
+                <div class="form-group ml-3">
+                    <label class="title control-label">Job Desc</label>
+                    <textarea class="form-control" value="@Model.JOBDESC"></textarea>
+                </div>
+                <div class="form-group ml-3">
+                    <label class="title control-label">Skill</label>
+                    <textarea class="form-control" value ="@Model.SKILL_NAME"></textarea>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col">
+                <div class="form-group">
+                    <label class="title control-label">Start Date</label>
+                    <input type="date" value="@Model.START_DATE" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label class="title control-label">End Date</label>
+                    <input type="date" value="@Model.END_DATE" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label class="title control-label">Salary</label>
+                    <input type="number" value="@Model.CURRENT_SALARY" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label class="title control-label">Project</label>
+                    <textarea class="form-control" value="@Model.PROJECT"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="title control-label">Benefit</label>
+                    <textarea class="form-control" value="@Model.BENEFIT"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success float-right mb-2" value="Add Experience" />
+
+                </div>
+            </div>
+        </div>
+    </form>
+    <form action="~/candidate/preselection/detail">
+        <input type="submit" class="btn btn-danger float-right mb-2" value="Cancel" />
+    </form>
+}
